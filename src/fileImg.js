@@ -35,11 +35,10 @@ class Upload extends Component {
     render (){
         return(
             <div>
-                <input type="file" onChange={this.uploadFile}/>
+                <input type="file" onChange={this.uploadFile} />
                 <br/>
-                <img width="520" src={this.state.picture}/>
+                <img width="30%" src={this.state.picture} />
                 <progress value={this.state.upValue} max="100">
-                {this.state.upValue} %
                 </progress>
             </div>
         )

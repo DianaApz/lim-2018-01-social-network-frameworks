@@ -59,8 +59,11 @@ LogGoogle(){
     </div>)
   }else {
     return(
+      <div>
     <button onClick={this.Google}>Inicia Sesión con Google</button>
-    )
+    <button onClick={this.Facebook}>Inicia Sesión con Facebook</button>
+    </div>
+  )
   }
 }
 
@@ -71,8 +74,7 @@ LogGoogle(){
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to red social</h1>
           {this.LogGoogle()}
-          <button onClick={this.Facebook}>Inicia Sesión con Facebook</button>
-            </header>
+             </header>
       </div>
     );
   }}
