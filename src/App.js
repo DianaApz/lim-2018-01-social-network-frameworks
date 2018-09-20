@@ -23,8 +23,9 @@ class App extends Component {
       
     })
   }
-  writeUserData(userId, email, firstName,img) {
-    firebase.database().ref('users/' + userId + '/').set({
+  writeUserData(userId, email, name,img) {
+    const database = firebase.database();
+    firebase.database().ref('user/' + userId + '/').set({
       username: name,
       email: email,
       profile_picture : img,
@@ -36,7 +37,7 @@ class App extends Component {
 
     firebase.auth().signInWithPopup(provider)
       .then((res) => {
-        this.Upload(res.user.uid,res.user.email,res.user.displayName,res.user.photoURL)
+        this.writeUserData(res.user.uid,res.user.email,res.user.displayName,res.user.photoURL)
       })
       .catch((err => console.log(`${err.code} erro`)
       ));
@@ -45,7 +46,7 @@ class App extends Component {
   Facebook() {
     const provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider)
-      .then(result => {
+      .then(res => {
         // const token = result.credential.accessToken;
         this.writeUserData(res.user.uid,res.user.email,res.user.displayName,res.user.photoURL)
       })
@@ -60,7 +61,7 @@ class App extends Component {
 
   LoginGeneral() {
     if (this.state.user) {
-      this.writeUserData(res.state.user.uid,res.state.user.email,res.state.user.displayName,res.state.user.photoURL)
+      // this.writeUserData(state.user.uid,state.user.email,state.user.displayName,state.user.photoURL)
       return (
         <div>
           <img width="100" src={this.state.user.photoURL} alt={this.state.user.photoURL} />
