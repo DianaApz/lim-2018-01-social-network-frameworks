@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import './App.css';
+import fa from './facebook.png';
+import go from './google-plus.png'
 
 
 class App extends Component {
@@ -72,8 +74,8 @@ class App extends Component {
     } else {
       return (
         <div>
-          <button onClick={this.Google}>Inicia Sesión con Google</button>
-          <button onClick={this.Facebook}>Inicia Sesión con Facebook</button>
+          <img src={go} onClick={this.Google}/>
+          <img src={fa} onClick={this.Facebook}/>  
         </div>
       );
     }
