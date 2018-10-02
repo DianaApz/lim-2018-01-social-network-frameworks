@@ -1,5 +1,5 @@
 {
-  "homepage": "https://dianaapz.github.io/lim-2018-01-social-network-frameworks",
+  
   "name": "lim-2018-01-social-network-frameworks",
   "version": "0.1.0",
   "private": true,
@@ -13,9 +13,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "gh-pages": "^2.0.0"
